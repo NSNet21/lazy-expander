@@ -20,7 +20,7 @@ Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
 | `Lazy Expander: Inline` | Items joined with space |
 | `Lazy Expander: Inline with Separator` | Items joined with chosen separator |
 | `Lazy Expander: Multiple Lines` | One item per line |
-| `Lazy Expander: Multiple Lines Numbered` | Numbered list (0, 1, a, A) |
+| `Lazy Expander: Multiple Lines Numbered` | Numbered or bulleted list (0, 1, a, A, -) |
 
 ---
 
@@ -83,6 +83,7 @@ col-{1..4}
 | 1 to X | `1. item` `2. item` `3. item` |
 | a to x | `a. item` `b. item` `c. item` |
 | A to X | `A. item` `B. item` `C. item` |
+| - Bullet | `- item` `- item` `- item` |
 
 > 💡 Spaces around commas are trimmed automatically — `*:{ text-sm , font-bold }` works the same as `*:{text-sm,font-bold}`.
 
