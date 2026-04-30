@@ -1,10 +1,10 @@
 # 🦥 Lazy Expander
 
-Expand brace patterns into multiple values — directly in the editor or copied to clipboard.
+Expand brace patterns into multiple values — directly in the editor.
 
 Inspired by Tailwind CSS workflows where repeating a prefix for every class gets tedious.
 
-![Demo](https://raw.githubusercontent.com/NSNet21/lazy-expander/main/assets/how-to-use-lazyExpander.gif)
+![Demo](https://raw.githubusercontent.com/NSNet21/lazy-expander/main/assets/how-to-use-lazyExpander-v2.gif)
 
 ```
 input:  *:{text-sm,font-bold,text-gray-500}
@@ -32,7 +32,9 @@ Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
 Select a brace pattern in the editor → run a command → result **replaces the selection**.
 
 ### Mode 2 — No Selection
-Run a command → type the pattern in the input box → result is **copied to clipboard** 📋.
+Run a command → type the pattern in the input box → result is **inserted at the cursor** ✍️.
+
+> 💡 If no editor is open, result is copied to clipboard instead.
 
 ---
 
@@ -93,9 +95,6 @@ col-{1..4}
 
 ## 📦 Installation
 
-### From VS Code Marketplace
-Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
-
 ### From GitHub Releases
 1. Download the latest `.vsix` from [Releases](../../releases)
 2. Open VS Code → Extensions panel (`Ctrl+Shift+X`)
@@ -106,7 +105,7 @@ Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
 
 Or via terminal:
 ```
-code --install-extension lazy-expander-0.1.0.vsix
+code --install-extension lazy-expander-0.1.1.vsix
 ```
 
 ---
