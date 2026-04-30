@@ -3,8 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const INPUT_DIR = path.resolve(__dirname, '../images-for-logo');
-const OUTPUT_FULL_DIR = path.resolve(__dirname, '../images-cropped-full');
-const OUTPUT_256_DIR = path.resolve(__dirname, '../images-cropped-256');
+const OUTPUT_FULL_DIR = path.resolve(__dirname, '../images-for-logo/images-cropped-full');
+const OUTPUT_256_DIR = path.resolve(__dirname, '../images-for-logo/images-cropped-256');
 
 // verticalCenter: 0.0 = crop from top, 0.5 = dead center, 1.0 = crop from bottom
 // Adjust per-image to keep logo text clearly visible
