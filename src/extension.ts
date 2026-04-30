@@ -19,10 +19,12 @@ const NUMBERING_OPTIONS = [
 
 type PatternResult =
   | { pattern: string; mode: 'selection'; editor: vscode.TextEditor; selection: vscode.Selection }
-  | { pattern: string; mode: 'input' };
+  | { pattern: string; mode: 'cursor';    editor: vscode.TextEditor; positions: readonly vscode.Position[] }
+  | { pattern: string; mode: 'clipboard' };
 
 async function getPattern(): Promise<PatternResult | undefined> {
   const editor = vscode.window.activeTextEditor;
+
   if (editor && !editor.selection.isEmpty) {
     return {
       pattern: editor.document.getText(editor.selection),
@@ -31,12 +33,20 @@ async function getPattern(): Promise<PatternResult | undefined> {
       selection: editor.selection,
     };
   }
+
+  // Capture all cursor positions BEFORE input box steals focus
+  const positions = editor?.selections.map(s => s.active);
+
   const pattern = await vscode.window.showInputBox({
     prompt: 'Enter brace pattern',
     placeHolder: '*:{text-sm,font-bold,text-gray-500}',
   });
   if (!pattern) return undefined;
-  return { pattern, mode: 'input' };
+
+  if (editor && positions?.length) {
+    return { pattern, mode: 'cursor', editor, positions };
+  }
+  return { pattern, mode: 'clipboard' };
 }
 
 async function chooseSeparator(): Promise<string | undefined> {
@@ -51,13 +61,31 @@ async function chooseSeparator(): Promise<string | undefined> {
   });
 }
 
+async function toClipboard(output: string): Promise<void> {
+  await vscode.env.clipboard.writeText(output);
+  vscode.window.showInformationMessage('Lazy Expander: Copied to clipboard!');
+}
+
 async function applyOutput(output: string, result: PatternResult): Promise<void> {
   if (result.mode === 'selection') {
     await result.editor.edit(eb => eb.replace(result.selection, output));
-  } else {
-    await vscode.env.clipboard.writeText(output);
-    vscode.window.showInformationMessage('Lazy Expander: Copied to clipboard!');
+    return;
   }
+
+  if (result.mode === 'cursor') {
+    // Insert at all captured cursor positions (supports multiple cursors)
+    const inserted = await result.editor.edit(eb => {
+      for (const pos of result.positions) {
+        eb.insert(pos, output);
+      }
+    });
+    // edit() returns false when file is read-only → fallback to clipboard
+    if (!inserted) await toClipboard(output);
+    return;
+  }
+
+  // mode === 'clipboard' (no editor was open)
+  await toClipboard(output);
 }
 
 async function cmdInline(): Promise<void> {
