@@ -1,0 +1,106 @@
+# Lazy Expander
+
+Expand brace patterns into multiple values — directly in the editor or copied to clipboard.
+
+Inspired by Tailwind CSS workflows where repeating a prefix for every class gets tedious.
+
+```
+input:  *:{text-sm,font-bold,text-gray-500}
+output: *:text-sm *:font-bold *:text-gray-500
+```
+
+---
+
+## Commands
+
+Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
+
+| Command | Output |
+|---|---|
+| `Lazy Expander: Inline` | Items joined with space |
+| `Lazy Expander: Inline with Separator` | Items joined with chosen separator |
+| `Lazy Expander: Multiple Lines` | One item per line |
+| `Lazy Expander: Multiple Lines Numbered` | Numbered list (0, 1, a, A) |
+
+---
+
+## Usage
+
+### Mode 1 — Selection
+Select a brace pattern in the editor → run a command → result **replaces the selection**.
+
+### Mode 2 — No Selection
+Run a command → type the pattern in the input box → result is **copied to clipboard**.
+
+---
+
+## Patterns
+
+### Comma-separated values
+```
+*:{text-sm,font-bold,text-gray-500}
+→  *:text-sm  *:font-bold  *:text-gray-500
+```
+
+### Numeric range
+```
+col-{1..4}
+→  col-1  col-2  col-3  col-4
+```
+
+### Range with step
+```
+{0..10..2}
+→  0  2  4  6  8  10
+```
+
+### Cartesian product (multiple groups)
+```
+{hover,focus}:text-blue-500
+→  hover:text-blue-500  focus:text-blue-500
+```
+
+---
+
+## Separator Options (Inline with Separator)
+
+| Option | Value |
+|---|---|
+| Comma | `, ` |
+| Pipe | ` \| ` |
+| Semicolon | `; ` |
+| Slash | ` / ` |
+| Tab | `\t` |
+| Custom... | Type your own |
+
+---
+
+## Numbering Options (Multiple Lines Numbered)
+
+| Option | Example output |
+|---|---|
+| 0 to X | `0. item` `1. item` `2. item` |
+| 1 to X | `1. item` `2. item` `3. item` |
+| a to x | `a. item` `b. item` `c. item` |
+| A to X | `A. item` `B. item` `C. item` |
+
+Spaces around commas are trimmed automatically — `*:{ text-sm , font-bold }` works the same as `*:{text-sm,font-bold}`.
+
+---
+
+## Installation
+
+### From VS Code Marketplace
+Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
+
+### From GitHub Releases
+Download the latest `.vsix` from [Releases](../../releases) and install via:
+```
+Extensions panel → ··· → Install from VSIX...
+```
+
+---
+
+## License
+
+MIT
