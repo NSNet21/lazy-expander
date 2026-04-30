@@ -1,0 +1,62 @@
+{
+  "name": "lazy-expander",
+  "displayName": "Lazy Expander",
+  "description": "Expand brace patterns like *:{text-sm,font-bold} into multiple values",
+  "version": "0.1.0",
+  "publisher": "your-publisher-id",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["brace", "expansion", "tailwind", "expand", "pattern"],
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/lazy-expander"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lazyExpander.inline",
+        "title": "Lazy Expander: Inline"
+      },
+      {
+        "command": "lazyExpander.inlineWithSeparator",
+        "title": "Lazy Expander: Inline with Separator"
+      },
+      {
+        "command": "lazyExpander.multipleLines",
+        "title": "Lazy Expander: Multiple Lines"
+      },
+      {
+        "command": "lazyExpander.multipleLinesNumbered",
+        "title": "Lazy Expander: Multiple Lines Numbered"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/brace-expansion": "^1.1.2",
+    "@types/jest": "^28.1.0",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "brace-expansion": "^2.0.1"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/test/**/*.test.ts"]
+  }
+}

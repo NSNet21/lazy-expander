@@ -1,0 +1,11 @@
+.vscode/**
+test/**
+src/**
+**/*.map
+crop-logo/**
+images-for-logo/**
+images-cropped-full/**
+images-cropped-256/**
+test.jsx
+.gitignore
+*.vscodeignore
