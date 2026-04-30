@@ -15,6 +15,7 @@ const NUMBERING_OPTIONS = [
   { label: '1 to X', description: '1. item  2. item  3. item…', value: '1' },
   { label: 'a to x', description: 'a. item  b. item  c. item…', value: 'a' },
   { label: 'A to X', description: 'A. item  B. item  C. item…', value: 'A' },
+  { label: '- Bullet', description: '- item  - item  - item…',  value: '-' },
 ];
 
 type PatternResult =
