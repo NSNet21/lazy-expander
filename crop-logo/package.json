@@ -1,0 +1,12 @@
+{
+  "name": "crop-logo",
+  "version": "1.0.0",
+  "description": "Crop lazyExpander logo images to square",
+  "main": "crop.js",
+  "scripts": {
+    "crop": "node crop.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}
