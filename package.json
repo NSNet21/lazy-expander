@@ -3,7 +3,7 @@
   "displayName": "Lazy Expander",
   "description": "Expand brace patterns like *:{text-sm,font-bold} into multiple values",
   "version": "0.1.0",
-  "publisher": "your-publisher-id",
+  "publisher": "nsnet",
   "engines": {
     "vscode": "^1.85.0"
   },

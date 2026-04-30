@@ -95,9 +95,16 @@ col-{1..4}
 Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
 
 ### From GitHub Releases
-Download the latest `.vsix` from [Releases](../../releases) and install via:
+1. Download the latest `.vsix` from [Releases](../../releases)
+2. Open VS Code → Extensions panel (`Ctrl+Shift+X`)
+3. Click `···` (top right) → **Install from VSIX...**
+4. Select the downloaded `.vsix` file
+
+![Install from VSIX](assets/howto-install-via-vsix.jpg)
+
+Or via terminal:
 ```
-Extensions panel → ··· → Install from VSIX...
+code --install-extension lazy-expander-0.1.0.vsix
 ```
 
 ---
