@@ -1,4 +1,4 @@
-# Lazy Expander
+# 🦥 Lazy Expander
 
 Expand brace patterns into multiple values — directly in the editor or copied to clipboard.
 
@@ -11,7 +11,7 @@ output: *:text-sm *:font-bold *:text-gray-500
 
 ---
 
-## Commands
+## ⚡ Commands
 
 Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
 
@@ -24,17 +24,17 @@ Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
 
 ---
 
-## Usage
+## 🖱️ Usage
 
 ### Mode 1 — Selection
 Select a brace pattern in the editor → run a command → result **replaces the selection**.
 
 ### Mode 2 — No Selection
-Run a command → type the pattern in the input box → result is **copied to clipboard**.
+Run a command → type the pattern in the input box → result is **copied to clipboard** 📋.
 
 ---
 
-## Patterns
+## 🧩 Patterns
 
 ### Comma-separated values
 ```
@@ -62,7 +62,7 @@ col-{1..4}
 
 ---
 
-## Separator Options (Inline with Separator)
+## ✂️ Separator Options (Inline with Separator)
 
 | Option | Value |
 |---|---|
@@ -71,11 +71,11 @@ col-{1..4}
 | Semicolon | `; ` |
 | Slash | ` / ` |
 | Tab | `\t` |
-| Custom... | Type your own |
+| ✏️ Custom... | Type your own |
 
 ---
 
-## Numbering Options (Multiple Lines Numbered)
+## 🔢 Numbering Options (Multiple Lines Numbered)
 
 | Option | Example output |
 |---|---|
@@ -84,11 +84,11 @@ col-{1..4}
 | a to x | `a. item` `b. item` `c. item` |
 | A to X | `A. item` `B. item` `C. item` |
 
-Spaces around commas are trimmed automatically — `*:{ text-sm , font-bold }` works the same as `*:{text-sm,font-bold}`.
+> 💡 Spaces around commas are trimmed automatically — `*:{ text-sm , font-bold }` works the same as `*:{text-sm,font-bold}`.
 
 ---
 
-## Installation
+## 📦 Installation
 
 ### From VS Code Marketplace
 Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
@@ -101,6 +101,6 @@ Extensions panel → ··· → Install from VSIX...
 
 ---
 
-## License
+## 📄 License
 
 MIT
