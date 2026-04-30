@@ -4,6 +4,8 @@ Expand brace patterns into multiple values — directly in the editor or copied 
 
 Inspired by Tailwind CSS workflows where repeating a prefix for every class gets tedious.
 
+![Demo](assets/how-to-use-lazyExpander.gif)
+
 ```
 input:  *:{text-sm,font-bold,text-gray-500}
 output: *:text-sm *:font-bold *:text-gray-500
@@ -17,10 +19,10 @@ Open the Command Palette (`Ctrl+Shift+P`) and type **Lazy Expander**:
 
 | Command | Output |
 |---|---|
-| `Lazy Expander: Inline` | Items joined with space |
-| `Lazy Expander: Inline with Separator` | Items joined with chosen separator |
-| `Lazy Expander: Multiple Lines` | One item per line |
-| `Lazy Expander: Multiple Lines Numbered` | Numbered or bulleted list (0, 1, a, A, -) |
+| `Lazy Expander: Inline` | `item1 item2 item3` |
+| `Lazy Expander: Inline with Separator` | `item1, item2` / `item1 \| item2` / custom |
+| `Lazy Expander: Multiple Lines` | `item1` `item2` `item3` (one per line) |
+| `Lazy Expander: Multiple Lines Numbered` | `1. item1` `2. item2` / `- item1` `- item2` |
 
 ---
 
