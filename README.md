@@ -4,7 +4,7 @@ Expand brace patterns into multiple values — directly in the editor or copied 
 
 Inspired by Tailwind CSS workflows where repeating a prefix for every class gets tedious.
 
-![Demo](assets/how-to-use-lazyExpander.gif)
+![Demo](https://raw.githubusercontent.com/NSNet21/lazy-expander/main/assets/how-to-use-lazyExpander.gif)
 
 ```
 input:  *:{text-sm,font-bold,text-gray-500}
@@ -102,7 +102,7 @@ Search **Lazy Expander** in the Extensions panel (`Ctrl+Shift+X`).
 3. Click `···` (top right) → **Install from VSIX...**
 4. Select the downloaded `.vsix` file
 
-![Install from VSIX](assets/howto-install-via-vsix.jpg)
+![Install from VSIX](https://raw.githubusercontent.com/NSNet21/lazy-expander/main/assets/howto-install-via-vsix.jpg)
 
 Or via terminal:
 ```
