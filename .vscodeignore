@@ -9,3 +9,6 @@ images-cropped-256/**
 test.jsx
 .gitignore
 *.vscodeignore
+video-assets/**
+logs/**
+*.vsix
